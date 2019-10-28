@@ -29,16 +29,32 @@
         <img src="assets/player/player_face_dark.png" width="35" height="35" />
       </template>
     </div>
-    <div id="modal-start" class="modal" data-modal="visible">
+    <div id="modal-start" class="modal modal-dark" data-modal="visible">
       <div class="modal-body">
-        <p class="modal-title">START YOUR GAME</p>
+        <h1 class="modal-title">START YOUR GAME</h1>
+        <p class="modal-text">
+          Help Garry find all the letters and make words out of them!
+        </p>
         <button id="game-start" class="btn btn--blue">START</button>
       </div>
     </div>
-    <div id="modal-restart" class="modal" data-modal="hidden">
+    <div id="modal-restart" class="modal modal-dark" data-modal="hidden">
       <div class="modal-body">
-        <p class="modal-title">GAME OVER</p>
-        <button id="game-restart" class="btn btn--red">RESTART</button>
+        <h1 class="modal-title">GAME OVER</h1>
+        <p class="modal-text">
+          Oops... Looks like you lost all your lives. Do not worry! Click on
+          restart and try again :)
+        </p>
+        <button id="game-restart" class="btn btn--blue">RESTART</button>
+      </div>
+    </div>
+    <div id="modal-finish" class="modal modal-dark" data-modal="hidden">
+      <div class="modal-body">
+        <h1 class="modal-title">YOU DID IT</h1>
+        <p class="modal-text">
+          Hey! Congratulations! See how far you've come...
+        </p>
+        <button id="game-new" class="btn btn--blue">RESTART</button>
       </div>
     </div>
     <script src="src/p5/p5.min.js"></script>

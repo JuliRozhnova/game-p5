@@ -43,7 +43,8 @@ class Game {
 
   gameFinish = () => {
     setTimeout(() => {
-      alert("Finish");
+      modalNewGame.setAttribute("data-modal", "visible");
+      gameStopped = true;
     }, 1000);
   };
 
@@ -89,7 +90,7 @@ class Game {
       liveArr.push(i);
       element = playerTemplate.content.cloneNode(true);
       livesBox.appendChild(element);
-    } while (i < 5);
+    } while (i < totalLives);
   };
 
   decreaseLife = () => {
@@ -111,7 +112,9 @@ class Game {
         this.showLetter(letter[2]);
 
         if (this.checkIfWin()) {
-          prevGames.length < 5 ? this.generateNewGameMap() : this.gameFinish();
+          prevGames.length < totalGames
+            ? this.generateNewGameMap()
+            : this.gameFinish();
         }
       }
     }

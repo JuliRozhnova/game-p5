@@ -49,3 +49,9 @@ document.getElementById("game-restart").onclick = function() {
   modalRestart.setAttribute("data-modal", "hidden");
   game.startGame();
 };
+
+document.getElementById("game-new").onclick = function() {
+  gameStopped = false;
+  modalNewGame.setAttribute("data-modal", "hidden");
+  game.startGame();
+};

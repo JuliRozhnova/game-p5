@@ -6,6 +6,7 @@ const scoreBox = document.getElementById("game-score");
 const livesBox = document.querySelector(".similar-live-container");
 const modalRestart = document.getElementById("modal-restart");
 const modalStart = document.getElementById("modal-start");
+const modalNewGame = document.getElementById("modal-finish");
 
 /** Define props for game board */
 const WIDTH = 500;

@@ -46,7 +46,7 @@ class Obstacles {
 
       obstaclesArr.push([obstacle_x, obstacle_y, randomColor]);
     }
-    console.log(JSON.stringify(obstaclesArr));
+    // console.log(JSON.stringify(obstaclesArr));
     return obstaclesArr;
   };
 

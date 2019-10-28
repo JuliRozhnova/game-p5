@@ -14,28 +14,6 @@ body {
   background-size: cover;
 }
 
-button,
-.btn {
-  display: block;
-  border: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  margin: 0 auto;
-  cursor: pointer;
-  min-width: 8rem;
-  min-height: 3rem;
-}
-
-.btn--red {
-  color: #fff;
-  background-color: red;
-}
-
-.btn--blue {
-  color: #fff;
-  background-color: rgb(2, 32, 52);
-}
-
 #game-canvas > canvas {
   border: 8px solid rgb(2, 32, 52);
   border-radius: 1rem;
@@ -90,15 +68,24 @@ button,
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 999;
+}
+
+.modal-dark {
+  color: #fff;
+  background: rgb(2, 22, 49);
 }
 
 .modal-body {
-  background: rgb(255, 255, 255);
-  padding: 5rem;
-  border: 8px solid rgb(2, 32, 52);
+  text-align: center;
+  max-width: 40rem;
 }
 
 .modal-title {
+  margin-bottom: 1rem;
+}
+
+.modal-text {
   margin-bottom: 1rem;
 }
 
@@ -114,4 +101,51 @@ button,
 
 .similar-live-container .hide {
   opacity: 0.5;
+}
+
+.btn {
+  -webkit-transition: all 0s ease-out;
+  -moz-transition: all 0s ease-out;
+  -o-transition: all 0s ease-out;
+  -ms-transition: all 0s ease-out;
+  transition: all 0s ease-out;
+  min-width: 10rem;
+  height: 3rem;
+  display: block;
+  font-family: "Pixel";
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+  padding: 4px 20px 0;
+  margin: 10px auto;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.btn:active {
+  outline: none;
+}
+
+.btn--blue {
+  background: #3b5999;
+
+  -webkit-box-shadow: 0px 5px 0px 0px #2e4476;
+  box-shadow: 0px 5px 0px 0px #2e4476;
+}
+
+.btn--blue:active {
+  top: 3px;
+}
+
+.btn--blue:active {
+  -webkit-box-shadow: 0px 2px 0px 0px #2e4476;
+  box-shadow: 0px 2px 0px 0px #2e4476;
 }
