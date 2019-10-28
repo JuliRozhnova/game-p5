@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Pixel";
+  src: url("../fonts/pixel.ttf");
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Pixel";
+  font-size: 20px;
+  background: url("../images/layout/game--blue.jpg") no-repeat;
+  background-size: cover;
+}
+
+button,
+.btn {
+  display: block;
+  border: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  cursor: pointer;
+  min-width: 8rem;
+  min-height: 3rem;
+}
+
+.btn--red {
+  color: #fff;
+  background-color: red;
+}
+
+.btn--blue {
+  color: #fff;
+  background-color: rgb(2, 32, 52);
+}
+
+#game-canvas > canvas {
+  border: 8px solid rgb(4, 51, 81);
+  border-radius: 1rem;
+}
+
+.game > div {
+  max-width: 990px;
+  margin: 0 auto;
+}
+
+.game-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 0 3rem;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-text {
+  min-width: 20rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 5rem;
+  padding: 3rem;
+}
+
+.game-lives {
+  display: flex;
+  align-items: center;
+}
+
+.game-lives > p {
+  margin-right: 1rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-body {
+  background: rgb(255, 255, 255);
+  padding: 5rem;
+  border: 8px solid rgb(4, 51, 81);
+}
+
+.modal-title {
+  margin-bottom: 1rem;
+}
+
+[data-modal="hidden"] {
+  display: none;
+}
+
+[data-modal="visible"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.similar-live-container .hide {
+  opacity: 0.5;
+}

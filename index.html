@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CatchUp</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="game">
+      <div class="game-navigation">
+        <div class="game-lives">
+          <p>Lives:</p>
+          <div class="similar-live-container"></div>
+        </div>
+        <!-- <span>Time: <span id="game-countdown">60</span></p> -->
+        <p>Score: <span id="game-score">0</span></p>
+      </div>
+      <div class="game-container">
+        <div id="game-canvas"></div>
+        <div class="game-text">
+          <p class="game-text-first"></p>
+          <span id="game-text-guessed"></span>
+          <p class="game-text-second"></p>
+        </div>
+      </div>
+      <template id="similar-live-template" style="display: none;">
+        <img src="assets/player/player_face_dark.png" width="35" height="35" />
+      </template>
+    </div>
+    <div id="modal-start" class="modal" data-modal="visible">
+      <div class="modal-body">
+        <p class="modal-title">START YOUR GAME</p>
+        <button id="game-start" class="btn btn--blue">START</button>
+      </div>
+    </div>
+    <div id="modal-restart" class="modal" data-modal="hidden">
+      <div class="modal-body">
+        <p class="modal-title">GAME OVER</p>
+        <button id="game-restart" class="btn btn--red">RESTART</button>
+      </div>
+    </div>
+    <script src="src/p5/p5.min.js"></script>
+    <script src="src/game/constants.js"></script>
+    <script src="src/game/data.js"></script>
+    <script src="src/game/grid.js"></script>
+    <script src="src/game/obstacles.js"></script>
+    <script src="src/game/idiom.js"></script>
+    <script src="src/game/player.js"></script>
+    <script src="src/game//letters.js"></script>
+    <script src="src/game/game.js"></script>
+    <script src="src/game/main.js"></script>
+  </body>
+</html>
