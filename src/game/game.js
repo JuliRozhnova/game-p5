@@ -32,6 +32,7 @@ class Game {
   startGame = () => {
     game.generateNewGameMap();
     game.generateLives();
+    prevGames = [];
   };
 
   generateNewGameMap = () => {

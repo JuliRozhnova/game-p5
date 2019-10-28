@@ -37,8 +37,12 @@ button,
 }
 
 #game-canvas > canvas {
-  border: 8px solid rgb(4, 51, 81);
+  border: 8px solid rgb(2, 32, 52);
   border-radius: 1rem;
+}
+
+.game {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), transparent);
 }
 
 .game > div {
@@ -59,15 +63,16 @@ button,
 }
 
 .game-text {
-  min-width: 20rem;
+  width: 20rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 5rem;
+  background: rgba(2, 32, 52, 0.9);
   padding: 3rem;
+  color: #fff;
+  text-align: center;
 }
 
 .game-lives {
@@ -90,7 +95,7 @@ button,
 .modal-body {
   background: rgb(255, 255, 255);
   padding: 5rem;
-  border: 8px solid rgb(4, 51, 81);
+  border: 8px solid rgb(2, 32, 52);
 }
 
 .modal-title {
