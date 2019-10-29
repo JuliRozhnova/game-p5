@@ -1,7 +1,4 @@
 class Obstacles {
-  constructor() {
-    this.obstaclesNumer = 20;
-  }
   preload = () => {
     this.spritesheet = loadImage(
       "../../assets/obstacles/crates_spritesheet.png"
@@ -24,61 +21,51 @@ class Obstacles {
     );
   };
 
-  setRandomColor = object => {
+  setRandomKey = object => {
     var keys = Object.keys(object);
     return object[keys[(keys.length * Math.random()) << 0]];
   };
 
   generateObstacles = () => {
-    let obstacle_x = 0;
-    let obstacle_y = 0;
-    let obstaclesArr = [];
+    let randomObstacleMap = this.setRandomKey(obstacleMaps);
     let randomColor = 0;
-    for (let i = 0; i < this.obstaclesNumer; i++) {
-      obstacle_x = this.setRandomPosition();
-      obstacle_y = this.setRandomPosition();
-      randomColor = this.setRandomColor(blocks);
 
-      while (this.checkIfRepeat(obstaclesArr, obstacle_x, obstacle_y)) {
-        obstacle_x = this.setRandomPosition();
-        obstacle_y = this.setRandomPosition();
-      }
-
-      obstaclesArr.push([obstacle_x, obstacle_y, randomColor]);
+    for (let obstacle of randomObstacleMap) {
+      randomColor = this.setRandomKey(blocks);
+      obstacle.push(randomColor);
     }
-    // console.log(JSON.stringify(obstaclesArr));
-    return obstaclesArr;
-  };
 
-  checkIfRepeat = (array, rX, rY) => {
-    for (let cords of array) {
-      if (
-        (cords[0] === rX && cords[1] === rY) ||
-        (game.player.x === rX && game.player.y === rY) ||
-        (game.letters.letterData[0][0] === rX &&
-          game.letters.letterData[0][1] === rY) ||
-        (game.letters.letterData[1][0] === rX &&
-          game.letters.letterData[1][1] === rY) ||
-        (game.letters.letterData[2][0] === rX &&
-          game.letters.letterData[2][1] === rY) ||
-        (game.letters.letterData[3][0] === rX &&
-          game.letters.letterData[3][1] === rY)
-      ) {
-        return true;
-      }
-    }
-    return false;
+    this.obstaclesGrid = this.generateObstaclesGrid(randomObstacleMap);
+    this.obstaclesGridOnly = this.obstaclesGrid;
+
+    return randomObstacleMap;
   };
 
   displayObstacles = () => {
-    for (let data of this.obstaclesData) {
+    for (let obstacle of this.obstaclesData) {
       image(
-        this.spritesheet.get(data[2][0], 0, 256, 256),
-        data[0],
-        data[1],
+        this.spritesheet.get(obstacle[2][0], 0, 256, 256),
+        obstacle[0],
+        obstacle[1],
         SQUARE_SIDE,
         SQUARE_SIDE
       );
     }
+  };
+
+  /** GENERATE GAME MAP WITH OBSTACLES */
+  generateObstaclesGrid = array => {
+    let gameGrid = Array.from({ length: 10 }, _ => {
+      return Array.from({ length: 10 });
+    });
+
+    for (let i = 0; i < array.length; i++) {
+      let obstacle = array[i];
+      const x = obstacle[0] / 50;
+      const y = obstacle[1] / 50;
+      gameGrid[x][y] = obstacle;
+    }
+
+    return gameGrid;
   };
 }

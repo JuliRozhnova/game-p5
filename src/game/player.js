@@ -1,7 +1,10 @@
 class Player {
-  constructor() {}
+  constructor() {
+    this.name = "Garry";
+  }
 
   preload = () => {
+    // this.bump = loadSound("assets/sounds/damage3.wav");
     left = loadImage("assets/player/player_left.png");
     right = loadImage("assets/player/player_right.png");
     up = loadImage("assets/player/player_up.png");
@@ -11,18 +14,19 @@ class Player {
   };
 
   setup = () => {
-    this.x = this.setRandomPosition();
-    this.y = this.setRandomPosition();
+    this.setupPlayer();
   };
 
   draw = () => {
     image(this.img, this.x, this.y, SQUARE_SIDE, SQUARE_SIDE);
   };
 
-  setRandomPosition = () => {
-    return (
-      Math.floor(Math.random() * Math.floor(WIDTH / SQUARE_SIDE)) * SQUARE_SIDE
-    );
+  setupPlayer = () => {
+    let arr = [];
+    game.insertInGrid(game.obstacles.obstaclesGrid, this.name, arr);
+    // Hardcode x & y pos for only one player
+    this.x = arr[0][0];
+    this.y = arr[0][1];
   };
 
   moveLeft() {

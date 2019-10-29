@@ -1,8 +1,4 @@
 class Idiom {
-  constructor() {}
-
-  preload = () => {};
-
   setup = () => {
     this.dice = Math.floor(Math.random() * idioms.length);
 

@@ -13,29 +13,13 @@ class Letters {
     this.displayLetters();
   };
 
-  setRandomPosition = () => {
-    return (
-      Math.floor(Math.random() * Math.floor(WIDTH / SQUARE_SIDE)) * SQUARE_SIDE
-    );
-  };
-
   loadLetters = () => {
     splitedWord = idioms[game.idiom.dice].word.split("");
     templateWord = [];
     let arr = [];
-    let letter_x = 0;
-    let letter_y = 0;
 
     for (let letter of splitedWord) {
-      letter_x = this.setRandomPosition();
-      letter_y = this.setRandomPosition();
-
-      while (this.checkIfRepeat(arr, letter_x, letter_y)) {
-        letter_x = this.setRandomPosition();
-        letter_y = this.setRandomPosition();
-      }
-
-      arr.push([letter_x, letter_y, letter]);
+      game.insertInGrid(game.obstacles.obstaclesGrid, letter, arr);
     }
 
     for (let i = 0; i < splitedWord.length; i++) {
@@ -43,18 +27,6 @@ class Letters {
     }
 
     return arr;
-  };
-
-  checkIfRepeat = (array, rX, rY) => {
-    for (let cords of array) {
-      if (
-        (cords[0] === rX && cords[1] === rY) ||
-        (game.player.x === rX && game.player.y === rY)
-      ) {
-        return true;
-      }
-    }
-    return false;
   };
 
   displayLetters = () => {

@@ -5,20 +5,23 @@ class Game {
     this.idiom = new Idiom();
     this.letters = new Letters();
     this.player = new Player();
+    this.movingObstacle = new Moving();
   }
 
   preload = () => {
     this.grid.preload();
-    this.player.preload();
-    this.letters.preload();
     this.obstacles.preload();
+    this.letters.preload();
+    this.player.preload();
+    this.movingObstacle.preload();
   };
 
   setup = () => {
-    this.player.setup();
     this.idiom.setup();
-    this.letters.setup();
     this.obstacles.setup();
+    this.letters.setup();
+    this.player.setup();
+    this.movingObstacle.setup();
   };
 
   draw = () => {
@@ -26,6 +29,7 @@ class Game {
     this.obstacles.draw();
     this.letters.draw();
     this.player.draw();
+    this.movingObstacle.draw();
   };
 
   /** MAIN */
@@ -42,16 +46,20 @@ class Game {
   };
 
   gameFinish = () => {
+    this.resetScore();
+    gameStopped = true;
+  };
+
+  gameWon = () => {
     setTimeout(() => {
+      this.gameFinish();
       modalNewGame.setAttribute("data-modal", "visible");
-      gameStopped = true;
-    }, 1000);
+    }, 500);
   };
 
   gameOver = () => {
-    this.resetScore();
+    this.gameFinish();
     modalRestart.setAttribute("data-modal", "visible");
-    gameStopped = true;
   };
 
   checkIfWin = () => {
@@ -100,6 +108,22 @@ class Game {
     liveArr.length > 1 ? liveArr.pop() : game.gameOver();
   };
 
+  /** PLACE ELEMENTS */
+  insertInGrid = (grid, element, arr) => {
+    let rX, rY;
+    while (true) {
+      rX = Math.floor(Math.random() * grid.length);
+      rY = Math.floor(Math.random() * grid[0].length);
+      if (!grid[rX][rY]) {
+        grid[rX][rY] = [rX * SQUARE_SIDE, rY * SQUARE_SIDE, element];
+        if (arr) {
+          arr.push([rX * SQUARE_SIDE, rY * SQUARE_SIDE, element]);
+        }
+        return;
+      }
+    }
+  };
+
   /** LETTERS */
   collectLetter = () => {
     for (let i = 0; i < game.letters.letterData.length; i++) {
@@ -114,7 +138,7 @@ class Game {
         if (this.checkIfWin()) {
           prevGames.length < totalGames
             ? this.generateNewGameMap()
-            : this.gameFinish();
+            : this.gameWon();
         }
       }
     }

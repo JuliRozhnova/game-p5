@@ -83,5 +83,5 @@ let score = 0;
 let gameStopped = true;
 let prevGames = [];
 let liveArr = [];
-let totalGames = 1;
+let totalGames = 5;
 let totalLives = 5;
