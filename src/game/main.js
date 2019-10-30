@@ -40,18 +40,16 @@ keyPressed = () => {
 };
 
 document.getElementById("game-start").onclick = function() {
-  gameStopped = false;
   modalStart.setAttribute("data-modal", "hidden");
+  game.startGame();
 };
 
 document.getElementById("game-restart").onclick = function() {
-  gameStopped = false;
   modalRestart.setAttribute("data-modal", "hidden");
   game.startGame();
 };
 
 document.getElementById("game-new").onclick = function() {
-  gameStopped = false;
   modalNewGame.setAttribute("data-modal", "hidden");
   game.startGame();
 };

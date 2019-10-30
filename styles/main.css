@@ -85,7 +85,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.modal-text {
+.modal-text,
+.modal-text p {
   margin-bottom: 1rem;
 }
 

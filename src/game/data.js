@@ -83,5 +83,12 @@ let score = 0;
 let gameStopped = true;
 let prevGames = [];
 let liveArr = [];
-let totalGames = 5;
+let totalGames = 2;
 let totalLives = 5;
+
+/** Sounds */
+let bump;
+let collect;
+
+let countdown;
+let counter;

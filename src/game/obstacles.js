@@ -36,7 +36,7 @@ class Obstacles {
     }
 
     this.obstaclesGrid = this.generateObstaclesGrid(randomObstacleMap);
-    this.obstaclesGridOnly = this.obstaclesGrid;
+    this.obstaclesGridOnly = JSON.parse(JSON.stringify(this.obstaclesGrid));
 
     return randomObstacleMap;
   };

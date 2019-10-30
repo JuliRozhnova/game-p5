@@ -14,7 +14,7 @@
           <p>Lives:</p>
           <div class="similar-live-container"></div>
         </div>
-        <!-- <span>Time: <span id="game-countdown">60</span></p> -->
+        <p>Time: <span id="game-time">0</span></p>
         <p>Score: <span id="game-score">0</span></p>
       </div>
       <div class="game-container">
@@ -51,13 +51,16 @@
     <div id="modal-finish" class="modal modal-dark" data-modal="hidden">
       <div class="modal-body">
         <h1 class="modal-title">YOU DID IT</h1>
-        <p class="modal-text">
-          Hey! Congratulations! See how far you've come...
-        </p>
+        <div class="modal-text">
+          <p>Hey! Congratulations! See how far you've come...</p>
+          <p>Time: <span id="total-time"></span></p>
+          <p>Score: <span id="total-score"></span></p>
+        </div>
         <button id="game-new" class="btn btn--blue">RESTART</button>
       </div>
     </div>
     <script src="src/p5/p5.min.js"></script>
+    <script src="src/p5/addons/p5.sound.min.js"></script>
     <script src="src/game/constants.js"></script>
     <script src="src/game/data.js"></script>
     <script src="src/game/obstaclesData.js"></script>

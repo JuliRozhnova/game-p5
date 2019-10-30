@@ -27,7 +27,7 @@ class Moving {
         game.obstacles.obstaclesGridOnly[Math.floor(newX / SQUARE_SIDE)][
           Math.floor(newY / SQUARE_SIDE)
         ];
-      return target === undefined;
+      if (target === undefined) return true;
     };
 
     if (this.x === gary.x && this.y === gary.y) {

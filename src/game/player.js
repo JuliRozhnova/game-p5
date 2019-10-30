@@ -4,7 +4,6 @@ class Player {
   }
 
   preload = () => {
-    // this.bump = loadSound("assets/sounds/damage3.wav");
     left = loadImage("assets/player/player_left.png");
     right = loadImage("assets/player/player_right.png");
     up = loadImage("assets/player/player_up.png");
@@ -82,6 +81,7 @@ class Player {
     game.obstacles.obstaclesData.forEach(obstacle => {
       if (this.x === obstacle[0] && this.y === obstacle[1]) {
         game.decreaseLife();
+        bump.play();
         collision = true;
       }
     });

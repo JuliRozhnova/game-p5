@@ -9,6 +9,9 @@ class Game {
   }
 
   preload = () => {
+    bump = loadSound("assets/sounds/damage.wav");
+    collect = loadSound("assets/sounds/catch.wav");
+
     this.grid.preload();
     this.obstacles.preload();
     this.letters.preload();
@@ -36,6 +39,8 @@ class Game {
   startGame = () => {
     game.generateNewGameMap();
     game.generateLives();
+    game.startCountTime();
+    gameStopped = false;
     prevGames = [];
   };
 
@@ -46,6 +51,8 @@ class Game {
   };
 
   gameFinish = () => {
+    clearInterval(countdown);
+    totalCountBox.innerText = counter;
     this.resetScore();
     gameStopped = true;
   };
@@ -75,6 +82,7 @@ class Game {
 
   /** SCORE */
   resetScore = () => {
+    totalScoreBox.innerText = score;
     scoreBox.innerText = "0";
     score = 0;
   };
@@ -130,9 +138,8 @@ class Game {
       let letter = game.letters.letterData[i];
       if (letter[0] === game.player.x && letter[1] === game.player.y) {
         game.letters.letterData.splice(i, 1);
-        // collect score
+        collect.play();
         this.collectScore();
-        // this happens on collectLetter
         this.showLetter(letter[2]);
 
         if (this.checkIfWin()) {
@@ -154,5 +161,16 @@ class Game {
         break;
       }
     }
+  };
+
+  /** COUNTER */
+  startCountTime = () => {
+    counter = 0;
+    countBox.innerText = "0";
+
+    countdown = setInterval(() => {
+      counter++;
+      countBox.innerText = counter;
+    }, 1000);
   };
 }
