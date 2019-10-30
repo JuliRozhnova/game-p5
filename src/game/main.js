@@ -41,15 +41,17 @@ keyPressed = () => {
 
 document.getElementById("game-start").onclick = function() {
   modalStart.setAttribute("data-modal", "hidden");
-  game.startGame();
+  game.triggerGameMode();
 };
 
 document.getElementById("game-restart").onclick = function() {
   modalRestart.setAttribute("data-modal", "hidden");
   game.startGame();
+  game.triggerGameMode();
 };
 
 document.getElementById("game-new").onclick = function() {
   modalNewGame.setAttribute("data-modal", "hidden");
   game.startGame();
+  game.triggerGameMode();
 };

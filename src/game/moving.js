@@ -3,17 +3,22 @@ class Moving {
     this.name = "Alien";
   }
   preload = () => {
-    this.img = loadImage("../../assets/obstacles/alien.png");
+    let alien1 = loadImage(`../../assets/obstacles/alien-0.png`);
+    let alien2 = loadImage(`../../assets/obstacles/alien-1.png`);
+    let alien3 = loadImage(`../../assets/obstacles/alien-2.png`);
+    let alien4 = loadImage(`../../assets/obstacles/alien-3.png`);
+    let alien5 = loadImage(`../../assets/obstacles/alien-4.png`);
+    this.allAliens = [alien1, alien2, alien3, alien4, alien5];
   };
 
-  setup = () => {
-    this.setupMoving();
+  setup = random => {
+    this.setupMoving(random);
   };
 
   draw = () => {
     image(this.img, this.x, this.y, SQUARE_SIDE, SQUARE_SIDE);
 
-    if (frameCount % 30 === 0 && !gameStopped) {
+    if (frameCount % 20 === 0 && !gameStopped) {
       this.move();
     }
   };
@@ -27,7 +32,7 @@ class Moving {
         game.obstacles.obstaclesGridOnly[Math.floor(newX / SQUARE_SIDE)][
           Math.floor(newY / SQUARE_SIDE)
         ];
-      if (target === undefined) return true;
+      if (!target) return true;
     };
 
     if (this.x === gary.x && this.y === gary.y) {
@@ -61,10 +66,11 @@ class Moving {
         break;
     }
   };
-  setupMoving = () => {
+  setupMoving = random => {
     let arr = [];
     game.insertInGrid(game.obstacles.obstaclesGrid, this.name, arr);
     this.x = arr[0][0];
     this.y = arr[0][1];
+    this.img = this.allAliens[random];
   };
 }

@@ -3,24 +3,39 @@
   src: url("../fonts/pixel.ttf");
 }
 
+:root {
+  --color-white: #fff;
+}
+
 * {
   margin: 0;
 }
 
-body {
-  font-family: "Pixel";
-  font-size: 20px;
-  background: url("../images/layout/game--blue.jpg") no-repeat;
-  background-size: cover;
+html {
+  height: 100%;
 }
 
-#game-canvas > canvas {
-  border: 8px solid rgb(2, 32, 52);
-  border-radius: 1rem;
+body {
+  font-family: "Pixel";
+  color: var(--color-white);
+  font-size: 20px;
+  background: url("../images/layout/game-bg-1.png") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#game-canvas {
+  border: 10px dashed #3d3d3d;
+  background: linear-gradient(to top, gray, 100px, transparent 5px),
+    linear-gradient(to right, gray, 100px, transparent 5px),
+    linear-gradient(to bottom, gray, 100px, transparent 5px),
+    linear-gradient(to left, gray, 100px, transparent 5px);
+  background-origin: border-box;
 }
 
 .game {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), transparent);
+  padding: 3rem 0;
 }
 
 .game > div {
@@ -32,7 +47,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem 0 3rem;
+  padding-bottom: 2rem;
 }
 
 .game-container {

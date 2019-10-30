@@ -36,6 +36,7 @@ class Obstacles {
     }
 
     this.obstaclesGrid = this.generateObstaclesGrid(randomObstacleMap);
+    // Grid only with obstacles for alien movement
     this.obstaclesGridOnly = JSON.parse(JSON.stringify(this.obstaclesGrid));
 
     return randomObstacleMap;

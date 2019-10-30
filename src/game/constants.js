@@ -1,4 +1,5 @@
 /** Define text blocks */
+const body = document.querySelector("body");
 const textLeft = document.querySelector(".game-text-first");
 const textRight = document.querySelector(".game-text-second");
 const word = document.getElementById("game-text-guessed");

@@ -90,5 +90,6 @@ let totalLives = 5;
 let bump;
 let collect;
 
+/** Game time counter */
 let countdown;
 let counter;

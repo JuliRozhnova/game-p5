@@ -19,12 +19,12 @@ class Game {
     this.movingObstacle.preload();
   };
 
-  setup = () => {
+  setup = random => {
     this.idiom.setup();
     this.obstacles.setup();
     this.letters.setup();
     this.player.setup();
-    this.movingObstacle.setup();
+    this.movingObstacle.setup(random);
   };
 
   draw = () => {
@@ -37,22 +37,28 @@ class Game {
 
   /** MAIN */
   startGame = () => {
-    game.generateNewGameMap();
+    const randomNumber = Math.floor(Math.random() * 5);
+    this.randomElement = randomNumber;
+    game.generateBackground(randomNumber);
+    game.generateNewGameMap(randomNumber);
     game.generateLives();
-    game.startCountTime();
-    gameStopped = false;
     prevGames = [];
   };
 
-  generateNewGameMap = () => {
-    game.setup();
+  generateNewGameMap = random => {
+    const newRandom = random ? random : this.randomElement;
+    game.setup(newRandom);
     word.innerText = "";
     word.innerText = templateWord.join(" ");
   };
 
+  triggerGameMode = () => {
+    game.startCountTime();
+    gameStopped = false;
+  };
+
   gameFinish = () => {
-    clearInterval(countdown);
-    totalCountBox.innerText = counter;
+    this.finishCountTime();
     this.resetScore();
     gameStopped = true;
   };
@@ -78,6 +84,22 @@ class Game {
       }
     }
     return win;
+  };
+
+  /** COUNTER */
+  startCountTime = () => {
+    counter = 0;
+    countBox.innerText = "0";
+
+    countdown = setInterval(() => {
+      counter++;
+      countBox.innerText = counter;
+    }, 1000);
+  };
+
+  finishCountTime = () => {
+    clearInterval(countdown);
+    totalCountBox.innerText = counter;
   };
 
   /** SCORE */
@@ -114,6 +136,11 @@ class Game {
       .getElementsByTagName("img")
       [liveArr.length - 1].classList.add("hide");
     liveArr.length > 1 ? liveArr.pop() : game.gameOver();
+  };
+
+  /** GENERATE BACKGROUND */
+  generateBackground = random => {
+    body.style.backgroundImage = `url(../../images/layout/game-bg-${random}.png)`;
   };
 
   /** PLACE ELEMENTS */
@@ -161,16 +188,5 @@ class Game {
         break;
       }
     }
-  };
-
-  /** COUNTER */
-  startCountTime = () => {
-    counter = 0;
-    countBox.innerText = "0";
-
-    countdown = setInterval(() => {
-      counter++;
-      countBox.innerText = counter;
-    }, 1000);
   };
 }
