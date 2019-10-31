@@ -43,6 +43,7 @@ class Game {
     game.generateNewGameMap(randomNumber);
     game.generateLives();
     prevGames = [];
+    enemySpeed = 35;
   };
 
   generateNewGameMap = random => {

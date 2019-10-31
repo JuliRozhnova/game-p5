@@ -85,6 +85,7 @@ let prevGames = [];
 let liveArr = [];
 let totalGames = 6;
 let totalLives = 5;
+let enemySpeed = 35;
 
 /** Sounds */
 let bump;

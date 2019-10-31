@@ -3,7 +3,6 @@ const easystar = new EasyStar.js();
 class Enemy {
   constructor() {
     this.name = "Alien";
-    this.speed = 25;
   }
   preload = () => {
     let enemy1 = loadImage("assets/obstacles/alien-0.png");
@@ -21,7 +20,7 @@ class Enemy {
 
   draw = () => {
     image(this.img, this.x, this.y, SQUARE_SIDE, SQUARE_SIDE);
-    if (frameCount % this.speed === 0 && !gameStopped) {
+    if (frameCount % enemySpeed === 0 && !gameStopped) {
       this.move();
     }
   };

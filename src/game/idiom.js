@@ -7,7 +7,7 @@ class Idiom {
     }
     prevGames.push(this.dice);
     if (prevGames.length % 2 === 0) {
-      game.enemy.speed -= 5;
+      enemySpeed -= 5;
     }
     this.randomIdiom = idioms[this.dice];
 
