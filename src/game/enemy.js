@@ -6,11 +6,11 @@ class Enemy {
     this.speed = 25;
   }
   preload = () => {
-    let enemy1 = loadImage(`../../assets/obstacles/alien-0.png`);
-    let enemy2 = loadImage(`../../assets/obstacles/alien-1.png`);
-    let enemy3 = loadImage(`../../assets/obstacles/alien-2.png`);
-    let enemy4 = loadImage(`../../assets/obstacles/alien-3.png`);
-    let enemy5 = loadImage(`../../assets/obstacles/alien-4.png`);
+    let enemy1 = loadImage("assets/obstacles/alien-0.png");
+    let enemy2 = loadImage("assets/obstacles/alien-1.png");
+    let enemy3 = loadImage("assets/obstacles/alien-2.png");
+    let enemy4 = loadImage("assets/obstacles/alien-3.png");
+    let enemy5 = loadImage("assets/obstacles/alien-4.png");
     this.allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5];
   };
 

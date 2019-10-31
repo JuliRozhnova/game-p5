@@ -140,7 +140,7 @@ class Game {
 
   /** GENERATE BACKGROUND */
   generateBackground = random => {
-    body.style.backgroundImage = `url(../../images/layout/game-bg-${random}.png)`;
+    body.style.backgroundImage = `url(images/layout/game-bg-${random}.png)`;
   };
 
   /** PLACE ELEMENTS */

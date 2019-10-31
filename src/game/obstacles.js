@@ -1,8 +1,6 @@
 class Obstacles {
   preload = () => {
-    this.spritesheet = loadImage(
-      "../../assets/obstacles/crates_spritesheet.png"
-    );
+    this.spritesheet = loadImage("assets/obstacles/crates_spritesheet.png");
   };
 
   setup = () => {
