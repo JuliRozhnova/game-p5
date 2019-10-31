@@ -8,6 +8,7 @@ class Idiom {
     prevGames.push(this.dice);
     if (prevGames.length % 2 === 0) {
       enemySpeed -= 5;
+      console.log(enemySpeed);
     }
     this.randomIdiom = idioms[this.dice];
 

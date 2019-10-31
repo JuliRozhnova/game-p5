@@ -83,9 +83,9 @@ let score = 0;
 let gameStopped = true;
 let prevGames = [];
 let liveArr = [];
-let totalGames = 6;
+let totalGames = 5; // TODO: Don't try 6
 let totalLives = 5;
-let enemySpeed = 35;
+let enemySpeed;
 
 /** Sounds */
 let bump;
