@@ -34,6 +34,13 @@
         <h1 class="modal-title">START YOUR GAME</h1>
         <div class="modal-text">
           <p>Help Garry find all the letters and make words out of them!</p>
+          <ul class="modal-list pumpkin">
+            <li>use arrows to move</li>
+            <li>press enter to collect the letters</li>
+            <li>avoid the alien</li>
+            <li>don't hit the walls</li>
+            <li>collect 5 words</li>
+          </ul>
         </div>
         <button id="game-start" class="btn btn--blue">START</button>
       </div>
@@ -41,10 +48,11 @@
     <div id="modal-restart" class="modal modal-dark" data-modal="hidden">
       <div class="modal-body">
         <h1 class="modal-title">GAME OVER</h1>
-        <p class="modal-text">
-          Oops... Looks like you lost all your lives. Do not worry! Click on
-          restart and try again :)
-        </p>
+        <div class="modal-text">
+          <p>Oops...</p>
+          <p>Looks like you lost all your lives.</p>
+          <p>Do not worry! Click on restart and try again 👻</p>
+        </div>
         <button id="game-restart" class="btn btn--blue">RESTART</button>
       </div>
     </div>
@@ -52,9 +60,12 @@
       <div class="modal-body">
         <h1 class="modal-title">YOU DID IT</h1>
         <div class="modal-text">
-          <p>Hey! Congratulations! See how far you've come...</p>
-          <p>Time: <span id="total-time"></span></p>
-          <p>Letters: <span id="total-score"></span></p>
+          <p>Hey! Congratulations! 🎉</p>
+          <p>See how far you've come...</p>
+          <ul class="modal-list">
+            <li>Letters: <span id="total-score">89</span></li>
+            <li>Time: <span id="total-time">100 </span></li>
+          </ul>
         </div>
         <button id="game-new" class="btn btn--blue">RESTART</button>
       </div>

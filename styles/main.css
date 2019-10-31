@@ -105,6 +105,23 @@ body {
   margin-bottom: 1rem;
 }
 
+.modal-list {
+  padding: 2rem 0;
+  list-style-type: none;
+}
+
+.modal-list li {
+  margin-bottom: 0.25rem;
+}
+
+.modal-list li::before {
+  margin-right: 0.5rem;
+}
+
+.modal-list.pumpkin li::before {
+  content: "🎃";
+}
+
 [data-modal="hidden"] {
   display: none;
 }

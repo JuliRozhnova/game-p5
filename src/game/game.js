@@ -33,6 +33,7 @@ class Game {
     this.letters.draw();
     this.player.draw();
     this.enemy.draw();
+    noLoop();
   };
 
   /** MAIN */
