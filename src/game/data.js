@@ -83,7 +83,7 @@ let score = 0;
 let gameStopped = true;
 let prevGames = [];
 let liveArr = [];
-let totalGames = 2;
+let totalGames = 6;
 let totalLives = 5;
 
 /** Sounds */

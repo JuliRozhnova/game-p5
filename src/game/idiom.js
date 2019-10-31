@@ -6,6 +6,9 @@ class Idiom {
       this.dice = Math.floor(Math.random() * idioms.length);
     }
     prevGames.push(this.dice);
+    if (prevGames.length % 2 === 0) {
+      game.enemy.speed -= 5;
+    }
     this.randomIdiom = idioms[this.dice];
 
     this.generateIdiom(this.randomIdiom);

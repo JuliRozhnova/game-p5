@@ -5,7 +5,7 @@ class Game {
     this.idiom = new Idiom();
     this.letters = new Letters();
     this.player = new Player();
-    this.movingObstacle = new Moving();
+    this.enemy = new Enemy();
   }
 
   preload = () => {
@@ -16,7 +16,7 @@ class Game {
     this.obstacles.preload();
     this.letters.preload();
     this.player.preload();
-    this.movingObstacle.preload();
+    this.enemy.preload();
   };
 
   setup = random => {
@@ -24,7 +24,7 @@ class Game {
     this.obstacles.setup();
     this.letters.setup();
     this.player.setup();
-    this.movingObstacle.setup(random);
+    this.enemy.setup(random);
   };
 
   draw = () => {
@@ -32,7 +32,7 @@ class Game {
     this.obstacles.draw();
     this.letters.draw();
     this.player.draw();
-    this.movingObstacle.draw();
+    this.enemy.draw();
   };
 
   /** MAIN */

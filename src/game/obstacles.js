@@ -37,7 +37,7 @@ class Obstacles {
 
     this.obstaclesGrid = this.generateObstaclesGrid(randomObstacleMap);
     // Grid only with obstacles for alien movement
-    this.obstaclesGridOnly = JSON.parse(JSON.stringify(this.obstaclesGrid));
+    this.levelGrid = JSON.parse(JSON.stringify(this.obstaclesGrid));
 
     return randomObstacleMap;
   };
@@ -62,8 +62,8 @@ class Obstacles {
 
     for (let i = 0; i < array.length; i++) {
       let obstacle = array[i];
-      const x = obstacle[0] / 50;
-      const y = obstacle[1] / 50;
+      const x = obstacle[0] / SQUARE_SIDE;
+      const y = obstacle[1] / SQUARE_SIDE;
       gameGrid[x][y] = obstacle;
     }
 

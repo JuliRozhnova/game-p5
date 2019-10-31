@@ -110,3 +110,8 @@ let obstacleMaps = {
     [150, 250]
   ]
 };
+
+let curPlayerX;
+let curPlayerY;
+let curEnemyX;
+let curEnemyY;
