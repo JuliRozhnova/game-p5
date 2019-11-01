@@ -90,6 +90,8 @@ let enemySpeed;
 /** Sounds */
 let bump;
 let collect;
+let song;
+let hit;
 
 /** Game time counter */
 let countdown;

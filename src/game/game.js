@@ -9,8 +9,10 @@ class Game {
   }
 
   preload = () => {
+    // song = loadSound("assets/sounds/background.ogg");
     bump = loadSound("assets/sounds/damage.wav");
     collect = loadSound("assets/sounds/catch.wav");
+    hit = loadSound("assets/sounds/garry.wav");
 
     this.grid.preload();
     this.obstacles.preload();

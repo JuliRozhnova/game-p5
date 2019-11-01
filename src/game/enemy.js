@@ -39,8 +39,8 @@ class Enemy {
           (game.enemy.y = path[1].y * SQUARE_SIDE),
           curPlayerX === path[1].x &&
             curPlayerY === path[1].y &&
-            game.decreaseLife())
-        : game.decreaseLife();
+            (game.decreaseLife(), hit.play()))
+        : (game.decreaseLife(), hit.play());
     });
 
     easystar.calculate();
